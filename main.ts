@@ -27,3 +27,9 @@ basic.forever(function () {
     maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
     maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
 })
+basic.forever(function () {
+    if (maqueen.Ultrasonic(PingUnit.Centimeters) == 6) {
+        radio.sendNumber(3)
+        basic.showIcon(IconNames.No)
+    }
+})
